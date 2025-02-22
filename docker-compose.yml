@@ -1,0 +1,24 @@
+services:
+  mediawiki:
+    build:
+      context: .
+      dockerfile: mediawiki/Dockerfile
+    image: ${REGISTRY:-}mediawiki:local
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    image: ${REGISTRY:-}web:local
+
+  jobrunner:
+    build:
+      context: .
+      dockerfile: jobrunner/Dockerfile
+    image: ${REGISTRY:-}jobrunner:local
+
+  novnc:
+    build:
+      context: ./novnc
+      dockerfile: Dockerfile
+    image: ${REGISTRY:-}novnc:local
