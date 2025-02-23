@@ -3,22 +3,22 @@ services:
     build:
       context: .
       dockerfile: mediawiki/Dockerfile
-    image: ${REGISTRY:-}mediawiki:local
+    image: ${REGISTRY:-}mediawiki:latest
 
   web:
     build:
       context: .
       dockerfile: web/Dockerfile
-    image: ${REGISTRY:-}web:local
+    image: ${REGISTRY:-}web:latest
 
   jobrunner:
     build:
       context: .
       dockerfile: jobrunner/Dockerfile
-    image: ${REGISTRY:-}jobrunner:local
+    image: ${REGISTRY:-}jobrunner:latest
 
   novnc:
     build:
       context: ./novnc
       dockerfile: Dockerfile
-    image: ${REGISTRY:-}novnc:local
+    image: ${REGISTRY:-}novnc:latest
