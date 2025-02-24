@@ -1,4 +1,5 @@
 services:
+
   mediawiki:
     build:
       context: .
@@ -22,3 +23,9 @@ services:
       context: ./novnc
       dockerfile: Dockerfile
     image: ${REGISTRY:-}novnc:latest
+
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    image: ${REGISTRY:-}mysql:latest
