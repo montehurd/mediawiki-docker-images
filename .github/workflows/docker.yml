@@ -1,5 +1,7 @@
-# Publish all images in the docker-compose.yml in the GitHub mirror at:
-# https://github.com/montehurd?tab=packages&repo_name=mediawiki-docker-images
+# Used by the GitHub mirror to publish images for all services in the docker-compose.yml
+#   https://github.com/montehurd?tab=packages&repo_name=mediawiki-docker-images
+# Usage:
+#   FROM ghcr.io/montehurd/mediawiki-docker-images/#SERVICE_NAME#:latest
 
 name: Build Docker images for docker-compose.yml services
 

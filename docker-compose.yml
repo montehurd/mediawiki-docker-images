@@ -1,3 +1,6 @@
+# Images for services defined in this file are available at:
+#   ghcr.io/montehurd/mediawiki-docker-images/#SERVICE_NAME#:latest
+
 services:
 
   mediawiki:
