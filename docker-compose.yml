@@ -23,12 +23,12 @@ services:
 
   novnc:
     build:
-      context: ./novnc
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: novnc/Dockerfile
     image: ${REGISTRY:-}novnc:latest
 
   mysql:
     build:
-      context: ./mysql
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: mysql/Dockerfile
     image: ${REGISTRY:-}mysql:latest

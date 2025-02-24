@@ -22,9 +22,9 @@ RUN set -ex && \
         xvfb && \
     rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
 
-COPY background.svg /usr/share/backgrounds/xfce/xfce-shapes.svg
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY entrypoint.sh /app/entrypoint.sh
+COPY novnc/background.svg /usr/share/backgrounds/xfce/xfce-shapes.svg
+COPY novnc/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY novnc/entrypoint.sh /app/entrypoint.sh
 
 EXPOSE ${NOVNC_PORT}
 
