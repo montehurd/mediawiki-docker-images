@@ -32,3 +32,9 @@ services:
       context: .
       dockerfile: mysql/Dockerfile
     image: ${REGISTRY:-}mysql:latest
+
+  codex:
+    build:
+      context: .
+      dockerfile: codex/Dockerfile
+    image: ${REGISTRY:-}codex:latest
