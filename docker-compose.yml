@@ -8,6 +8,14 @@ services:
       context: .
       dockerfile: novnc/Dockerfile
     image: ${REGISTRY:-}novnc:latest
+    environment:
+      - NOVNC_PORT=8087
+    ports:
+      - 8087:8087
+    # To test locally, after 'docker compose up' use:
+    # http://localhost:8087/vnc_lite.html?autoconnect=true
+    # or
+    # http://localhost:8087/vnc.html?autoconnect=true
 
   mysql:
     build:
@@ -20,3 +28,7 @@ services:
       context: .
       dockerfile: codex/Dockerfile
     image: ${REGISTRY:-}codex:latest
+    ports:
+      - 5173:5173
+    # To test locally, after 'docker compose up' use:
+    # http://localhost:5173
