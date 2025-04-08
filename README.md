@@ -1,25 +1,18 @@
 
-WIP notes (will be updated later):
+Temporary parking spot for Dockerfiles for which we want Docker images to use in multiple Mediawiki related projects
 
-Questions:
-- can we use --host-resolver-rules so we don't need to install chrome in the web container?
-  would really keep things clean! if chrome could be in own container!
-- can we do this cleanly enough to have docker-compose.override.yml only override each service's
-  "image:"? (and add a couple services)
+Main Gitlab repo is here:
 
-Need:
-- test for each container seeing if upstream container from mediawiki's docker-compose.yml advanced
-- run mw image generation on github cron
-- build mw image with mw repo (copy its contents to host mediawiki folder on first start)
+https://gitlab.wikimedia.org/mhurd/mediawiki-docker-images
 
-Containers:
-- mediawiki
-- web
-- jobrunner
-- novnc
-- chrome
-- firefox
-- installer (for installing mediawiki and components, alpine with bash? bash:5.2.37-alpine3.21?)
-- selenium (with node, might work as separate container if we can leverage --host-resolver-rules)
-- git cache proxy (possibly)
+Repo is mirrored to Github here:
 
+https://github.com/montehurd/mediawiki-docker-images
+
+Mirror used so we can leverage a Github workflow to automatically generate Docker images that we can then use in various projects 
+
+Needed because the Wikimedia Gitlab instance does not currently have a `Container Registry` enabled - so we leverage Github's for now
+
+Images are then available here:
+
+https://github.com/montehurd?tab=packages&repo_name=mediawiki-docker-images
