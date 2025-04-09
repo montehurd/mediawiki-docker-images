@@ -44,3 +44,9 @@ services:
       context: .
       dockerfile: qunit/Dockerfile
     image: ${REGISTRY:-}qunit:latest
+
+  mediawiki:
+    build:
+      context: .
+      dockerfile: mediawiki/Dockerfile
+    image: ${REGISTRY:-}mediawiki:latest
