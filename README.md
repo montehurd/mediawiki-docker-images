@@ -1,5 +1,5 @@
 
-Temporary parking spot for Dockerfiles for which we want Docker images to use in multiple Mediawiki related projects
+Dockerfiles for which we want Docker images to use in multiple Mediawiki related projects
 
 Main Gitlab repo is here:
 
