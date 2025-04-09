@@ -32,3 +32,15 @@ services:
       - 5173:5173
     # To test locally, after 'docker compose up' use:
     # http://localhost:5173
+
+  selenium:
+    build:
+      context: .
+      dockerfile: selenium/Dockerfile
+    image: ${REGISTRY:-}selenium:latest
+
+  qunit:
+    build:
+      context: .
+      dockerfile: qunit/Dockerfile
+    image: ${REGISTRY:-}qunit:latest
