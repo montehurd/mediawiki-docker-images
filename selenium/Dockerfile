@@ -10,7 +10,6 @@ COPY ./selenium/install-browser-for-puppeteer-core.js \
 RUN set -ex && \
     apt-get update && \
     apt-get install -y --no-install-recommends curl && \
-    chmod -R 777 /var/local && \
     /var/local/install-chrome-dependencies.sh && \
     curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
