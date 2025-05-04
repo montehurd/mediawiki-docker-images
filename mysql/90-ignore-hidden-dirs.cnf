@@ -1,0 +1,2 @@
+[mysqld]
+ignore-db-dir=.cache
