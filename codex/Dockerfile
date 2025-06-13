@@ -2,7 +2,6 @@ FROM node:23-alpine3.21
 
 WORKDIR /app
 
-# Install git, curl, clone repository, and build packages
 RUN apk add --no-cache git curl && \
     git clone https://gerrit.wikimedia.org/r/design/codex && \
     cd codex && \
@@ -13,8 +12,8 @@ RUN apk add --no-cache git curl && \
 
 WORKDIR /app/codex
 
-# Expose Vite's default port
+COPY codex/vite.config.wrapper.ts packages/codex/
+
 EXPOSE 5173
 
-# Start the Vite dev server for the codex package with host binding
-CMD ["npm", "run", "dev", "-w", "@wikimedia/codex", "--", "--host"]
+CMD ["sh", "-c", "cd packages/codex && npx vite --config vite.config.wrapper.ts --host"]
