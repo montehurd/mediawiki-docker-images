@@ -50,3 +50,9 @@ services:
       context: .
       dockerfile: mediawiki/Dockerfile
     image: ${REGISTRY:-}mediawiki:latest
+
+  tofu:
+    build:
+      context: .
+      dockerfile: tofu/Dockerfile
+    image: ${REGISTRY:-}tofu:latest
