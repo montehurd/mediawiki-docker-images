@@ -7,7 +7,6 @@ ENV TOFU_DATA_DIR=.tofu-data
 
 COPY --from=tofu /usr/local/bin/tofu /usr/local/bin/tofu
 
-COPY tofu/vps.cloudconfig.yml /workspace/
 COPY tofu/entrypoint.sh /workspace/
 COPY tofu/reset /workspace/
 
