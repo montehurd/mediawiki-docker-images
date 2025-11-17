@@ -5,6 +5,10 @@ RUN apk --no-cache add file \
     && chmod +x shfmt \
     && mv shfmt /usr/local/bin/
 
+COPY lint/package.json /usr/local/lib/lint/
+RUN cd /usr/local/lib/lint && npm install
+COPY lint/eslint.config.js /usr/local/lib/lint/
 COPY lint/lint-shell /usr/local/bin/
+COPY lint/lint-js /usr/local/bin/
 
 WORKDIR /scripts

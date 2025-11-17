@@ -1,0 +1,3 @@
+#!/bin/sh
+
+npx eslint --fix --config /usr/local/lib/lint/eslint.config.js /scripts
