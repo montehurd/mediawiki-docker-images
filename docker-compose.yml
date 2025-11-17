@@ -45,6 +45,12 @@ services:
       dockerfile: qunit/Dockerfile
     image: ${REGISTRY:-}qunit:latest
 
+  lint:
+    build:
+      context: .
+      dockerfile: lint/Dockerfile
+    image: ${REGISTRY:-}lint:latest
+
   mediawiki:
     build:
       context: .
