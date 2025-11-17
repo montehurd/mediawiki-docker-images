@@ -1,4 +1,4 @@
-FROM bash:5.3.3-alpine3.22
+FROM node:25-alpine3.21
 
 RUN apk --no-cache add file \
     && wget -O shfmt https://github.com/mvdan/sh/releases/download/v3.12.0/shfmt_v3.12.0_linux_amd64 \
