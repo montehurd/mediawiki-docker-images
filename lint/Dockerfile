@@ -5,8 +5,7 @@ RUN apk --no-cache add file \
     && chmod +x shfmt \
     && mv shfmt /usr/local/bin/
 
-COPY lint/package.json /usr/local/lib/lint/
-RUN cd /usr/local/lib/lint && npm install
+RUN npm install -g eslint@^9.39.1 @stylistic/eslint-plugin@^5.5.0
 COPY lint/eslint.config.js /usr/local/lib/lint/
 COPY lint/shell /usr/local/bin/
 COPY lint/javascript /usr/local/bin/

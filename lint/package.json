@@ -1,7 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "eslint": "^9.39.1",
-    "@stylistic/eslint-plugin": "^5.5.0"
-  }
-}
