@@ -9,6 +9,6 @@ COPY lint/package.json /usr/local/lib/lint/
 RUN cd /usr/local/lib/lint && npm install
 COPY lint/eslint.config.js /usr/local/lib/lint/
 COPY lint/shell /usr/local/bin/
-COPY lint/js /usr/local/bin/
+COPY lint/javascript /usr/local/bin/
 
 WORKDIR /scripts

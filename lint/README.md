@@ -14,7 +14,7 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 
 Format and lint all JavaScript files recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint js
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint javascript
 ```
 
 - Finds all `.js`, `.mjs`, and `.cjs` files
