@@ -9,7 +9,7 @@ RUN apk --no-cache add file \
 
 COPY lint/eslint.config.js /usr/local/lib/lint/
 
-COPY lint/shell /usr/local/bin/
-COPY lint/eslint /usr/local/bin/
+COPY lint/shell-fix /usr/local/bin/
+COPY lint/eslint-fix /usr/local/bin/
 
 WORKDIR /scripts

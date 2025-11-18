@@ -4,7 +4,7 @@
 
 Lint all shell scripts (including those without extensions) recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint shell
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint shell-fix
 ```
 
 - Finds all executable bash and POSIX shell scripts (with or without extensions)
@@ -16,7 +16,7 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 
 Lint all JavaScript and Vue files recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint eslint
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint eslint-fix
 ```
 
 - Finds all `.js`, `.mjs`, `.cjs` and `.vue` files
