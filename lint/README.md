@@ -1,8 +1,8 @@
-# Lint Auto-Fixers
+# Lint Fixers
 
 ## Shell Scripts
 
-Lint all shell scripts (including those without extensions) recursively:
+Lint-fix all shell scripts (including those without extensions) recursively:
 ```bash
 docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint shell-fix
 ```
@@ -14,7 +14,7 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 
 ## JavaScript / Vue
 
-Lint all JavaScript and Vue files recursively:
+Lint-fix all JavaScript and Vue files recursively:
 ```bash
 docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint eslint-fix
 ```
