@@ -12,14 +12,14 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 - Excludes hidden directories (those starting with `.`)
 - Files are modified in-place
 
-## JavaScript
+## JavaScript / Vue
 
-Lint all JavaScript files recursively:
+Lint all JavaScript and Vue files recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint javascript
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint eslint
 ```
 
-- Finds all `.js`, `.mjs`, and `.cjs` files
+- Finds all `.js`, `.mjs`, `.cjs` and `.vue` files
 - Applies ESLint with auto-fix enabled
 - Uses 2-space indentation
 - Enforces single quotes, semicolons, and consistent spacing
