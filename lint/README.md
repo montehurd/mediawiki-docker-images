@@ -2,7 +2,7 @@
 
 Format all shell scripts (including those without extensions) recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint lint-shell
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint shell
 ```
 
 - Finds all executable bash and POSIX shell scripts (with or without extensions)
@@ -14,7 +14,7 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 
 Format and lint all JavaScript files recursively:
 ```bash
-docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint lint-js
+docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint js
 ```
 
 - Finds all `.js`, `.mjs`, and `.cjs` files
