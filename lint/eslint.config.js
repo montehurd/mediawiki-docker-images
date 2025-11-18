@@ -14,7 +14,7 @@ export default [
 
       // Formatting rules (from stylistic plugin)
       '@stylistic/indent': ['error', 2],
-      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/semi': ['error', 'never'],
       '@stylistic/quotes': ['error', 'single'],
       '@stylistic/comma-spacing': 'error',
       '@stylistic/space-before-function-paren': ['error', 'never']
@@ -34,6 +34,7 @@ export default [
       // Vue-specific rules
       'vue/multi-word-component-names': 'off',
       'vue/html-indent': ['error', 2],
+      'vue/html-self-closing': 'off',
       'vue/max-attributes-per-line': ['error', {
         singleline: 3,
         multiline: 1
