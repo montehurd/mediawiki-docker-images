@@ -1,6 +1,8 @@
-## Formatting Shell Scripts
+# Lint Auto-Fixers
 
-Format all shell scripts (including those without extensions) recursively:
+## Shell Scripts
+
+Lint all shell scripts (including those without extensions) recursively:
 ```bash
 docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint shell
 ```
@@ -10,9 +12,9 @@ docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lin
 - Excludes hidden directories (those starting with `.`)
 - Files are modified in-place
 
-## Formatting JavaScript
+## JavaScript
 
-Format and lint all JavaScript files recursively:
+Lint all JavaScript files recursively:
 ```bash
 docker run --rm -v "$PWD:/scripts" ghcr.io/montehurd/mediawiki-docker-images/lint javascript
 ```
