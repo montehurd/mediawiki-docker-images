@@ -62,3 +62,9 @@ services:
       context: .
       dockerfile: tofu/Dockerfile
     image: ${REGISTRY:-}tofu:latest
+
+  ansi2html:
+    build:
+      context: .
+      dockerfile: ansi2html/Dockerfile
+    image: ${REGISTRY:-}ansi2html:latest
