@@ -10,13 +10,52 @@ on:
     branches:
       - main
 
-permissions: 
+permissions:
   contents: read
   packages: write
 
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up matrix
+        id: set-matrix
+        run: |
+          all_services=$(yq -r '.services | keys[]' docker-compose.yml)
+
+          # Find which top-level folders changed in this push
+          changed_dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u)
+          echo "Changed dirs: $changed_dirs"
+
+          # Only build services whose folder changed; if none matched,
+          # a non-service path changed so build everything.
+          services=""
+          for svc in $all_services; do
+            if echo "$changed_dirs" | grep -qx "$svc"; then
+              services="$services $svc"
+            fi
+          done
+          if [ -z "$services" ]; then
+            services="$all_services"
+          fi
+
+          matrix_json=$(echo "$services" | xargs -n1 | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "matrix={\"service\":$matrix_json}" >> $GITHUB_OUTPUT
+          echo "Services to build: $matrix_json"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -31,9 +70,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push Images
+      - name: Build and Push ${{ matrix.service }}
         env:
           REGISTRY: ghcr.io/${{ github.repository }}/
         run: |
-          docker compose build
-          docker compose push
+          echo "Building ${{ matrix.service }}..."
+          docker compose build ${{ matrix.service }}
+          docker compose push ${{ matrix.service }}
