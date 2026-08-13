@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/dev/bookworm-php83-fpm:1.0.0-s2
+FROM docker-registry.wikimedia.org/dev/bookworm-php83-fpm:1.0.0-s4
 
 COPY mediawiki/node-preparation.sh /var/local
 
