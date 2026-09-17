@@ -13,6 +13,7 @@ COPY tofu/reset /workspace/
 RUN apk add --no-cache \
     bash \
     bind-tools \
+    curl \
     git \
     gcc \
     python3-dev \
