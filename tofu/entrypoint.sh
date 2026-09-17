@@ -4,7 +4,7 @@
 export TF_VAR_os_auth_url=$OS_AUTH_URL
 export TF_VAR_os_application_credential_id=$OS_APPLICATION_CREDENTIAL_ID
 export TF_VAR_os_application_credential_secret=$OS_APPLICATION_CREDENTIAL_SECRET
-export TF_VAR_os_project_id=${OS_PROJECT_ID:-mediawiki-quickstart}
+export TF_VAR_os_project_id=$PROJECT_NAME
 
 verify_credentials() {
   [[ -n "$OS_APPLICATION_CREDENTIAL_ID" && -n "$OS_APPLICATION_CREDENTIAL_SECRET" ]] || \
