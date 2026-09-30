@@ -1,4 +1,4 @@
-FROM node:20-bookworm-slim
+FROM node:26-bookworm-slim
 
 ENV FIREFOX_BIN=/usr/bin/firefox-esr
 
