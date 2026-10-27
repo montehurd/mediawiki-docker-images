@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/dev/trixie-php85-fpm:1.0.0
+FROM docker-registry.wikimedia.org/dev/trixie-php85-fpm:1.0.0-s2
 
 COPY mediawiki/node-preparation.sh /var/local
 
