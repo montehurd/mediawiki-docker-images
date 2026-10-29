@@ -1,4 +1,4 @@
-FROM alpine:3.21.9
+FROM alpine:3.24.3
 
 ARG DISPLAY_WIDTH=1280
 ARG DISPLAY_HEIGHT=1024
@@ -22,7 +22,7 @@ RUN set -ex && \
         xvfb && \
     rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
 
-COPY novnc/background.svg /usr/share/backgrounds/xfce/xfce-shapes.svg
+COPY novnc/background.svg /usr/share/backgrounds/xfce/xfce-x.svg
 COPY novnc/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY novnc/entrypoint.sh /app/entrypoint.sh
 
